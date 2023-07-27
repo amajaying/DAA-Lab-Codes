@@ -25,30 +25,46 @@ int main(){
     printf("\n");
     int check[n];
     for(int i=0; i<n; i++){
-        check[arr[i]] = 1;
+        check[arr[i]] = 0;
     }
     for(int i=0; i<n; i++){
         for(int j=i+1; j<n; j++){
             if(arr[i] == arr[j]){
-                check[arr[i]]+=1;
+                check[arr[i]]=1;
             }
         }
     }
 
-    printf("The duplicate values are: ");
-    for(int i=0; i<n; i++){
-        printf("%d ", check[arr[i]]);
-    }
-
     int count = 0;
     for(int i=0; i<n; i++){
-        if(check[arr[i]] > 1){
+        if(check[arr[i]] == 1){
             // printf("%d ", arr[i]);
-            check[arr[i]]-=1;
+            check[arr[i]]=0;
             count++;
         }
     }
     printf("\nTotal number of duplicate values: %d\n", count);
 
-    
+    int repeat[n];
+    for(int i=0; i<n; i++){
+        repeat[arr[i]] = 0;
+    }
+
+    for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++){
+            if(arr[i] == arr[j]){
+                repeat[arr[i]]++;
+            }
+        }
+    }
+
+    int max = repeat[arr[0]];
+    int maxIndex = arr[0];
+    for(int i=0; i<n; i++){
+        if(repeat[arr[i]] > max){
+            max = repeat[arr[i]];
+            maxIndex = arr[i];
+        }
+    }
+    printf("The most repeating element in the array is: %d\n", maxIndex);
 }
