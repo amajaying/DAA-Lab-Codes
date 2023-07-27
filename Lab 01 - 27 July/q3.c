@@ -23,48 +23,34 @@ int main(){
         printf("%d ", arr[i]);
     }
     printf("\n");
-    int check[n];
-    for(int i=0; i<n; i++){
-        check[arr[i]] = 0;
+    int visited[n];
+    for(int i=0;i<n;i++){
+        fscanf(myFile,"%d",&arr[i]);
+        visited[i]=0;
     }
-    for(int i=0; i<n; i++){
-        for(int j=i+1; j<n; j++){
-            if(arr[i] == arr[j]){
-                check[arr[i]]=1;
+    
+
+    int most_frequecy=0,count=0,duplicated;
+    for(int i=0;i<n;i++){
+        int temp=arr[i];
+        int frequency=1;
+        for(int j=i+1;j<n;j++){
+            if(arr[i]==arr[j] && visited[j]==0){
+                visited[j]=1;
+                frequency++;
+                if(frequency==2){
+                    count++;
+                }
             }
         }
-    }
-
-    int count = 0;
-    for(int i=0; i<n; i++){
-        if(check[arr[i]] == 1){
-            // printf("%d ", arr[i]);
-            check[arr[i]]=0;
-            count++;
-        }
-    }
-    printf("\nTotal number of duplicate values: %d\n", count);
-
-    int repeat[n];
-    for(int i=0; i<n; i++){
-        repeat[arr[i]] = 0;
-    }
-
-    for(int i=0; i<n; i++){
-        for(int j=i+1; j<n; j++){
-            if(arr[i] == arr[j]){
-                repeat[arr[i]]++;
-            }
+        if(frequency>most_frequecy){
+            most_frequecy=frequency;
+            duplicated=arr[i];
         }
     }
 
-    int max = repeat[arr[0]];
-    int maxIndex = arr[0];
-    for(int i=0; i<n; i++){
-        if(repeat[arr[i]] > max){
-            max = repeat[arr[i]];
-            maxIndex = arr[i];
-        }
-    }
-    printf("The most repeating element in the array is: %d\n", maxIndex);
+    printf("No of duplicates : %d\nMost Repeating :%d",count, duplicated);
+
+    
+
 }
