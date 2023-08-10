@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 void gcd(int a, int b, FILE *ofp){
-    
     if(a>b)
         a=a-b;
     else
