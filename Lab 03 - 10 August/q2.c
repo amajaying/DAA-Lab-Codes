@@ -35,7 +35,7 @@ int main(){
         FILE *fp1, *fp2;
         fp1 = fopen("inAsce.dat", "r");
         fp2 = fopen("outInsAsce.dat", "w");
-        int n=250;        
+        int n=300;        
         int a[n];
         for (int i = 0; i < n; i++)
         {
@@ -55,15 +55,13 @@ int main(){
         FILE *fp1, *fp2;
         fp1 = fopen("inDesc.dat", "r");
         fp2 = fopen("outInsDesc.dat", "w");
-        int n=250;    
+        int n=300;    
         int a[n];
         for (int i = 0; i < n; i++)
         {
             fscanf(fp1, "%d, ", &a[i]);
         }
-        for(int i=0;i<n;i++){
-            printf("%d ", a[i]);
-        }
+
 
         insertionSort(a, n);
         for (int i = 0; i < n; i++)
@@ -79,7 +77,7 @@ int main(){
         FILE *fp1, *fp2;
         fp1 = fopen("inRand.dat", "r");
         fp2 = fopen("outInsRand.dat", "w");
-        int n=250;
+        int n=300;
         int a[n];
         for (int i = 0; i < n; i++)
         {

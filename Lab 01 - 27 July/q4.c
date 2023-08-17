@@ -16,7 +16,10 @@ int main(){
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
-    rotate(arr,5);
+    int x;
+    printf("Rotate from?: ");
+    scanf("%d", &x);
+    rotate(arr,x);
     for(int i=0;i<n;i++){
         printf("%d ",arr[i]);
     }
