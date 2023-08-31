@@ -59,7 +59,72 @@ int main()
             scanf("%d", &again);
             break;
         }
-
+        case 2:
+        {
+            int i = 1;
+            while (i < n)
+            {
+                int child = i;
+                while (child > 0)
+                {
+                    int parent = (child - 1) / 2;
+                    if (s[parent].age > s[child].age)
+                    {
+                        struct person temp = s[parent];
+                        s[parent] = s[child];
+                        s[child] = temp;
+                        child = parent;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                i++;
+            }
+            printf("Min-heap created successfully\n");
+            printf("ID\tName\t\tAge\tHeight\tWeight\n");
+            for (int i = 0; i < n; i++)
+            {
+                printf("%d\t%s\t%d\t%d\t%d\n", s[i].id, s[i].name, s[i].age, s[i].height, s[i].weight);
+            }
+            printf("\nChoose option again? (0/1): ");
+            scanf("%d", &again);
+            break;
+        }
+        case 3:
+        {
+            int i = 1;
+            while (i < n)
+            {
+                int child = i;
+                while (child > 0)
+                {
+                    int parent = (child - 1) / 2;
+                    if (s[parent].weight < s[child].weight)
+                    {
+                        struct person temp = s[parent];
+                        s[parent] = s[child];
+                        s[child] = temp;
+                        child = parent;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                i++;
+            }
+            printf("Max-heap created successfully\n");
+            printf("ID\tName\t\tAge\tHeight\tWeight\n");
+            for (int i = 0; i < n; i++)
+            {
+                printf("%d\t%s\t%d\t%d\t%d\n", s[i].id, s[i].name, s[i].age, s[i].height, s[i].weight);
+            }
+            printf("\nChoose option again? (0/1): ");
+            scanf("%d", &again);
+            break;
+        }
         case 4:
         {
             int min = s[0].age;
@@ -77,6 +142,69 @@ int main()
             scanf("%d", &again);
             break;
         }
+        case 5:
+        {
+            printf("Enter new person details: ");
+            scanf("%d, %[^,], %d, %d, %d", &s[n].id, s[n].name, &s[n].age, &s[n].height, &s[n].weight);
+            int child = n;
+            while (child > 0)
+            {
+                int parent = (child - 1) / 2;
+                if (s[parent].age > s[child].age)
+                {
+                    struct person temp = s[parent];
+                    s[parent] = s[child];
+                    s[child] = temp;
+                    child = parent;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            n++;
+            printf("New person inserted successfully\n");
+            printf("ID\tName\t\tAge\tHeight\tWeight\n");
+            for (int i = 0; i < n; i++)
+            {
+                printf("%d\t%s\t%d\t%d\t%d\n", s[i].id, s[i].name, s[i].age, s[i].height, s[i].weight);
+            }
+            printf("\nChoose option again? (0/1): ");
+            scanf("%d", &again);
+            break;
         }
+        case 6:
+        {
+            int max = s[0].age;
+            int index = 0;
+            for (int i = 1; i < n; i++)
+            {
+                if (s[i].age > max)
+                {
+                    max = s[i].age;
+                    index = i;
+                }
+            }
+            for (int i = index; i < n - 1; i++)
+            {
+                s[i] = s[i + 1];
+            }
+            n--;
+            printf("Oldest person deleted successfully\n");
+            printf("ID\tName\t\tAge\tHeight\tWeight\n");
+            for (int i = 0; i < n; i++)
+            {
+                printf("%d\t%s\t%d\t%d\t%d\n", s[i].id, s[i].name, s[i].age, s[i].height, s[i].weight);
+            }
+            printf("\nChoose option again? (0/1): ");
+            scanf("%d", &again);
+            break;
+        }
+        case 7:
+        {
+            again = 0;
+            break;
+        }
+    }
     }
 }
