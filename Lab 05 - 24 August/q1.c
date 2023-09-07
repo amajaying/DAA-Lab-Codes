@@ -145,7 +145,16 @@ int main()
         case 5:
         {
             printf("Enter new person details: ");
-            scanf("%d, %[^,], %d, %d, %d", &s[n].id, s[n].name, &s[n].age, &s[n].height, &s[n].weight);
+            printf("Enter id: ");
+            scanf("%d", &s[n].id);
+            printf("Enter name: ");
+            scanf("%s", s[n].name);
+            printf("Enter age: ");
+            scanf("%d", &s[n].age);
+            printf("Enter height: ");
+            scanf("%d", &s[n].height);
+            printf("Enter weight: ");
+            scanf("%d", &s[n].weight);
             int child = n;
             while (child > 0)
             {
