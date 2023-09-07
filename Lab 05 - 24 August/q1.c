@@ -82,7 +82,7 @@ int main()
                 }
                 i++;
             }
-            printf("Min-heap created successfully\n");
+            printf("Min-heap created successfully\n");22
             printf("ID\tName\t\tAge\tHeight\tWeight\n");
             for (int i = 0; i < n; i++)
             {
@@ -205,6 +205,6 @@ int main()
             again = 0;
             break;
         }
-    }
+        }
     }
 }
