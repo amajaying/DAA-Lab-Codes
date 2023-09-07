@@ -155,6 +155,7 @@ int main()
             scanf("%d", &s[n].height);
             printf("Enter weight: ");
             scanf("%d", &s[n].weight);
+
             int child = n;
             while (child > 0)
             {
@@ -173,11 +174,7 @@ int main()
             }
             n++;
             printf("New person inserted successfully\n");
-            printf("ID\tName\t\tAge\tHeight\tWeight\n");
-            for (int i = 0; i < n; i++)
-            {
-                printf("%d\t%s\t%d\t%d\t%d\n", s[i].id, s[i].name, s[i].age, s[i].height, s[i].weight);
-            }
+           
             printf("\nChoose option again? (0/1): ");
             scanf("%d", &again);
             break;
