@@ -9,7 +9,6 @@ struct item
     int weight;
     float ratio;
 };
-// max heap on the basis of ratio
 
 void heapify(struct item arr[], int n, int i)
 {
