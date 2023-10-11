@@ -5,6 +5,7 @@
 int main()
 {
     int n, m;
+    printf("Enter number of nodes & edges: ");
     scanf("%d", &n);
     scanf("%d", &m);
     int adj[n][n];
