@@ -33,26 +33,22 @@ int main(){
     }
     fclose(fp);
 
-    // maintain a min-priority queue Q
     int Q[n];
     for(int i=0; i<n; i++){
         Q[i] = INT_MAX;
     }
     Q[s-1] = 0;
 
-    // maintain a parent array
     int parent[n];
     for(int i=0; i<n; i++){
         parent[i] = -1;
     }
 
-    // maintain a visited array
     int visited[n];
     for(int i=0; i<n; i++){
         visited[i] = 0;
     }
 
-    // apply Prim's algorithm
     int u;
 
     while(1){
@@ -75,8 +71,6 @@ int main(){
         }
     }
 
-    // display the cost adjacency matrix of T
-
     printf("The cost adjacency matrix of T is: \n");
 
     for(int i=0; i<n; i++){
@@ -91,7 +85,6 @@ int main(){
         printf("\n");
     }
 
-    // display the total cost of T
 
     int totalCost = 0;
     for(int i=0; i<n; i++){
