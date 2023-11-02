@@ -1,16 +1,3 @@
-// Aim of the program: Given an undirected weighted connected graph G(V, E) and
-// starring vertex ‘s’. Maintain a Min-Priority Queue ‘Q’ from the vertex set V and
-// apply Prim’s algorithm to
-//  Find the minimum spanning tree T(V, E’). Display the cost adjacency matrix
-// of ‘T’.
-//  Display total cost of the minimum spanning tree T.
-// Note# Nodes will be numbered consecutively from 1 to n (user input), and edges will
-// have varying weight. The graph G can be read from an input file “inUnAdjMat.dat”
-// that contains cost adjacency matrix. The expected output could be displayed as the
-// cost adjacency matrix of the minimum spanning tree and total cost of the tree.
-
-// Content of the input file “inUnAdjMat.dat”
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
